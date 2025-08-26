@@ -1,7 +1,8 @@
 //////// package coding;
 
 
-import java. util.*;
+import java.util.*;
+
 public class Array {
     public static void main(String[] args) {
         // System.out.println("Hello, sinnur!");
@@ -108,15 +109,101 @@ public class Array {
         }
          */
 
+
+         //SECOND LARGEST ELEMENT IN AN ARRAY
+        // int arr [] = {10, 50, 50, 50, 25} ;
+
+        // int largest = Integer.MIN_VALUE;
+        // int second = Integer.MIN_VALUE;
+        // for(int i=0 ;i< arr.length; i++){
+        //     if(arr[i] > largest){
+        //         second=largest;
+        //         largest=arr[i];
+        //     }
+        //     else if(arr[i] > second && arr[i] != largest){
+        //         second = arr[i];
+        //     }
+        // }
+        // if(second == Integer.MIN_VALUE){
+        //     System.out.println("no second largest element");
+        // }
+        // else{
+        //     System.out.println(second);
+        // }
        
 
 
+        //FACTORIAL OF A NUMBER 
+
+        // System.out.println("Enter number");
+        // int n = sc.nextInt();
+        // int fact=1;
+        // for(int i=n; i>=1 ; i--){
+        //     fact= fact * i;
+        // }
+
+        // System.out.println("factorial of "+ n + "is : " + fact);
 
 
+        //MERGE TWO SORTED ARRAY INTO ONE 
 
+        System.out.println("Enter first array size length");
+        int  n = sc.nextInt();
+
+        int arr1[] = new int[n];
+
+        System.out.println("Enter array element");
+        for(int i=0 ; i<n; i++){
+            arr1[i]=sc.nextInt();
+        }
+
+        System.out.println("Enter second arary size length");
+        int m=sc.nextInt();
+
+        int arr2[] = new int[m];
+
+        System.out.println("Enter array element");
+        for(int i=0 ; i<m; i++){
+            arr2[i]=sc.nextInt();
+        }
+
+        // System.out.println("merged the array: " + Arrays.toString(mergeArray(arr1,n,arr2,m)));
+        //merged array into one
+        int merged []= mergeArray(arr1,n,arr2,m);
+        System.out.println("merged array element");
+        for(int i=0 ; i< merged.length; i++){
+            System.out.print(" " + merged[i]+ "  ");
+        }
 
     }
 
+
+    //MERGE TWO SORTED ARRAY INTO ONE
+    public static int[] mergeArray(int arr1[],int n, int arr2[], int m){
+        ArrayList <Integer> al = new ArrayList<>();
+
+        for(int i=0; i<n; i++){
+            al.add(arr1[i]);
+        }
+
+        for(int i=0; i<m; i++){
+            al.add(arr2[i]);
+        }
+        // return arr2;
+        int size = al.size();
+
+        int array[] = new int [size];
+
+        for(int i=0; i<al.size(); i++){
+            array[i] =(int) al.get(i);
+        }
+
+        Arrays.sort(array);
+
+        return array;
+    }
+
+    //MAX ELEMENT IN AN ARRAY
     public static int maxElement(int arr[]){
         int max=Integer.MIN_VALUE;
         for(int i=0; i<arr.length;i++){
@@ -128,6 +215,7 @@ public class Array {
         return max;
     }
 
+    //FOR REVERSING THE STRING
     public static String reverseString(String str){
         char ch[]= str.toCharArray();
         int left = 0;
@@ -140,8 +228,8 @@ public class Array {
             left++;
             right--;
         }
-
         return new String(ch);
-
     }
+
+    
 }
